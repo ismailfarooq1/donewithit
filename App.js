@@ -9,13 +9,16 @@ import {
   Button,
   Alert,
   Platform,
+  Dimensions
 } from "react-native";
+
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import WelcomeScreen from './app/screens/WelcomeScreen'
+import ViewImage from './app/screens/ViewImageScreen'
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Button title="Click Button" onPress={() => console.log("Hello")} />
-    </SafeAreaView>
+    <ViewImage />
   );
 }
 
@@ -24,4 +27,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+  view1: {
+    width: "100%",
+    height: "30%",
+    backgroundColor: 'red'
+  }
 });
