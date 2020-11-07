@@ -12,6 +12,8 @@ import {
     ImageBackground
 } from "react-native";
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import colors from '../config/colors'
 
 
@@ -30,8 +32,12 @@ export default function WelcomeScreen(props) {
 
         <SafeAreaView style={styles.container}>
             <View style={styles.top}>
-                <View style={styles.left_box}></View>
-                <View style={styles.right_box}></View>
+                <View style={styles.left_box}>
+                    <MaterialCommunityIcons name='close' color='white' size={30} />
+                </View>
+                <View style={styles.right_box}>
+                    <MaterialCommunityIcons name='trash-can-outline' color='white' size={30} />
+                </View>
             </View>
             <Image resizeMethod="contain" style={styles.image_main} source={require('../assets/astro.jpg')} />
             <View style={styles.bottom}>
@@ -59,16 +65,11 @@ const styles = StyleSheet.create({
         flex: 0.2,
     },
     left_box: {
-        height: 50,
-        width: 50,
-        backgroundColor: colors.primary,
         marginLeft: 20,
         marginTop: 20
     },
     right_box: {
-        height: 50,
-        width: 50,
-        backgroundColor: colors.secondary,
+        textAlign: 'center',
         marginRight: 20,
         marginTop: 20
     },
