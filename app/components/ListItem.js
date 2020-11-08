@@ -5,7 +5,7 @@ import AppText from './AppText';
 
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
-function ListItem({ title, description, image, ImageComponent, onPress, renderRightActions }) {
+function ListItem({ title, description, image, IconComponent, onPress, renderRightActions }) {
     return (
         <Swipeable
             renderRightActions={renderRightActions}
@@ -15,7 +15,7 @@ function ListItem({ title, description, image, ImageComponent, onPress, renderRi
                 underlayColor={colors.light}
             >
                 <View style={styles.container}>
-                    {ImageComponent}
+                    {IconComponent}
                     {image && <Image style={styles.image} source={require('../assets/hamza.jpg')} />}
                     <View style={styles.details_container}>
                         <AppText style={styles.title}>{title}</AppText>
@@ -31,7 +31,8 @@ function ListItem({ title, description, image, ImageComponent, onPress, renderRi
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        padding: 15
+        padding: 15,
+        backgroundColor: colors.white
     },
     image: {
         width: 70,
