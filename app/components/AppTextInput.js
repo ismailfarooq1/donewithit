@@ -1,9 +1,9 @@
 import React from 'react';
-import { TextInput, View, StyleSheet, Platform } from 'react-native';
+import { TextInput, View, StyleSheet, Platform, Dimensions } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import defaultStyles from '../config/styles'
 
-function AppTextInput({ icon, ...otherProps }) {
+function AppTextInput({ icon, onChangeText, ...otherProps }) {
     return (
         <View style={styles.container}>
             {icon &&
@@ -16,8 +16,9 @@ function AppTextInput({ icon, ...otherProps }) {
             }
 
             <TextInput
-                style={styles.textInput}
-                placeholder={otherProps.placeholder}
+                style={[defaultStyles.text, styles.textInput]}
+                {...otherProps}
+                onChangeText={onChangeText}
             />
         </View>
     );
@@ -32,7 +33,9 @@ const styles = StyleSheet.create({
         padding: 15,
         marginVertical: 10,
     },
-    textInput: defaultStyles.text,
+    textInput: {
+        flex: 1,
+    },
     icon: {
         marginRight: 10
     }
