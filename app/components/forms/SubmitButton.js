@@ -6,8 +6,8 @@ import AppButton from '../AppButton';
 
 
 function SubmitButton({ title }) {
-    const { handleSubmit } = useFormikContext();
-
+    const { handleSubmit, values } = useFormikContext();
+    console.log(values)
     return (
         <AppButton
             title={title}

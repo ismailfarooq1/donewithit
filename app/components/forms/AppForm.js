@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 function AppForm({ initialValues, onSubmit, validationSchema, children }) {
-
+    console.log(children)
     return (
         <Formik
             initialValues={initialValues}
